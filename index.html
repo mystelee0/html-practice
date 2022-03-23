@@ -1,76 +1,93 @@
 <!doctype html>
 <html>
 <head>
-	<title>게시판을 만들어보자</title>
-	<meta charset="utf-8">
-	<style> 
-		html,body{ height:100%;}
-		#act{
-		color: white;
-		
-		}
+<title>게시판을 만들어보자</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style> 
+* {
+box-sizing: border-box;
+}	
+html, body{ height:100%;}  /* body 크기 */
 
-		li {
-		padding:10px;
-		}
+body{ 
+margin:5px; 
+}
 
-		li:hover{
-		background-color:#333333;
-		}
+.grid h1{
+grid-column:1/3;
+font-size : 45px;
+text-align: center;
+border:3px solid black;
+margin:0;
 
-		a{
-		color:black;
-		text-decoration: none;
-		}
+}
 
-		.saw{
-		color:yellow;
-		}
+.grid ol, ul{
+text-align : center;
+list-style-type:none;
+overflow:hidden;
+padding:0;
+margin:0;
+border:3px solid black;
+}
 
-		h1{
-		font-size : 45px;
-		text-align: center;
-		border-bottom:5px solid gray;
-		margin:0;
-		}
 
-		#grid ol, ul{
-		text-align : center;
-		list-style-type:none;
-		overflow:hidden;
-		background-color:#444444;
-		border-right:5px solid gray;
-		width:90%;
-		margin:0;
-		padding:5px;
-		}
+.grid{ 
+display: grid; 
+grid-template-columns: 200px 1fr;
+}
+.notice_board { 
+border: 1px solid black;
 
-		body{ 
-		margin:0; 
-		}
-		#grid{ display: grid; 
-		grid-template-columns: 150px 1fr;
-		height:80%;
-		}
-		#m { margin-left:10px;}
-	</style>
+}
+
+.line {			/*  게시물  */
+display:block;
+border: 1px solid red;
+padding:10px;
+margin: 5px;
+text-align:left;
+}
+li span{ float:right; }  /*쌍따옴표 */
+</style>
+
 </head>
 
 <body>
+<div  class="grid">
+
 <h1> 게시판 만들기 연습장 </h1>
-<div  id="grid">
+
+
 <ul> 
-	<li><a href="board.html" class="saw" id="act">자유게시판</a></li>
-	<li><a href="#video.html" class="saw" id="act">동영상</a></li>
+	<li><a href="board.html" class="saw">자유게시판</a></li>
+	<li><a href="#video.html" class="saw">동영상</a></li>
 </ul>
 
-	<div id="m">
-	<p><a href="https://www.w3.org/TR/2011/WD-html5-20110405/ ">html specification 링크타기</a></p>
-	<a href="https://www.w3schools.com/">w3schools</a><br>
-	<p>도움이 되는 사이트 : can i use </p>
+<div class="notice_board">
 
-	<!--<img src="image1.png" width="80%">   이미지 추가-->
+<ol>
+<li>
+	<div class="line"> <!-- 1번 -->
+	<a href="https://www.w3.org/TR/2011/WD-html5-20110405/ ">html specification</a>
+	<span>" "</span>
 	</div>
+</li>
+<li>
+	<div class="line"> <!--2번-->
+	<a href="https://www.w3schools.com/">w3schools</a><br>
+	</div>
+</li>
+<li>
+	<div class="line"> <!--3번-->
+	<p> can i use </p>
+	</div>
+</li>
+
+</ol>	<!--<img src="image1.png" width="80%">   이미지 추가-->
+</div>
+
 </div>
 </body>
 </html>
