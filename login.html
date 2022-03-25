@@ -7,19 +7,67 @@
 <style> 
 * {
 box-sizing: border-box;
-}	
-.form{
-border:1px solid black;
 }
-ul{list-style:none;}
+header{
+text-align:center;
+margin-top:80px;
+margin-bottom:40px;
+}
+.super{
+border:2px solid red; 
+text-align:center;
+
+}
+.form_wrapper{
+display:inline-block;
+border:2px solid orange ;
+border-radius:5px;
+padding:20px;
+text-align:center;
+width:360px;
+}
+.form{
+width:100%;
+display:inline-block; 
+
+}
+
+.form input[type=text]{
+width:100%;
+padding:10px 15px;
+margin: 5px 0;
+border-radius:5px;
+border:1px solid #dadada;
+}
+.form input[type=text]:focus{
+outline:none;  // remove focus border
+border: 1px solid #03c75a;
+}
+.form input[type=submit]{
+background-color: #4CAF50;
+color:white;
+border-radius:5px;
+width:100%;
+padding:10px 15px;
+margin-top:50px;
+margin-bottom:0px;
+border:none;
+}
+ul{
+list-style:none;
+text-align:center;
+padding:0;
+}
+a{text-decoration:none;}
 </style>
 
 </head>
 
 <body>
-<h1>로그인</h1>
-<div class="form">
-<form action="#" method="post">
+<header><h1 style="font-size:40px">과제용 게시판</h1></header>
+<div class="super">
+<div class="form_wrapper">
+<form action=# method="post" class="form">
 <div>
 <input type="text" id="useridv" name="userid" placeholder="아이디" required autofocus >
 </div>
@@ -27,12 +75,14 @@ ul{list-style:none;}
 <input type="text" id="password" name="password" placeholder="비밀번호">
 </div>
 <div>
-<input type="submit" value="로그인">
+<input type="submit" value="로그인" >
 </div>
 </form>
-</div>
+
 <ul>
 <li><a target="_blanck" href=#>회원가입</a></li>
 </ul>
+</div>
+</div>
 </body>
 </html>
