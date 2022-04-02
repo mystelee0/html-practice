@@ -29,6 +29,7 @@ margin-bottom:5px;
     padding:8px;
     text-decoration: none;
 }
+a:link,a:visited,a:active{text-decoration: none; color:black;}
 .nav li a:hover{background-color: #d0d0d0;}
 .grid ol, ul{
 text-align : center;
