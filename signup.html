@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-<title>로그인</title>
+<title>회원가입</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style> 
@@ -64,25 +64,25 @@ a{text-decoration:none;}
 </head>
 
 <body>
-    <header><h1 style="font-size:40px">게시판 로그인</h1></header>
-    <div class="super">
-        <div class="form_wrapper">
-            <form action="login.php" target="_blank" method="post" class="form">
-                <div>
-                <input type="text" id="useridv" name="userid" placeholder="아이디" required autofocus >
-                </div>
-                <div>
-                <input type="text" id="password" name="password" placeholder="비밀번호">
-                </div>
-                <div>
-                <input type="submit" value="로그인" >
-                </div>
-                </form>
-        
-            <ul>
-                <li><a target="_blanck" href="signup.html">회원가입</a></li>
-                </ul>
-        </div>
-        </div>
-    </body>
-    </html>
+<header><h1 style="font-size:40px">게시판 회원가입</h1></header>
+<div class="super">
+<div class="form_wrapper">
+<form action="/action_signup.php" method="post" class="form">
+	<div>
+		<input type="text" id="nname" name="nname" placeholder="닉네임" required autofocus >
+		</div>
+<div>
+<input type="text" id="useridv" name="userid" placeholder="아이디" >
+</div>
+<div>
+<input type="text" id="password" name="password" placeholder="비밀번호">
+</div>
+<div>
+<input type="submit" value="가입" >
+</div>
+</form>
+
+</div>
+</div>
+</body>
+</html>
