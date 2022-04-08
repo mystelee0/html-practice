@@ -26,30 +26,30 @@ padding:20px;
 text-align:center;
 width:360px;
 }
-.form{
+#myform{
 width:100%;
 display:inline-block; 
 
 }
 
-.form input[type=text]{
+#myform input[type]{
 width:100%;
 padding:10px 15px;
 margin: 5px 0;
 border-radius:5px;
 border:1px solid #dadada;
 }
-.form input[type=text]:focus{
+#myform input[type]:focus{
 outline:none; 
 border: 1px solid #03c75a;
 }
-.form input[type=submit]{
+#myform input[type=submit]{
 background-color: #4CAF50;
 color:white;
 border-radius:5px;
 width:100%;
 padding:10px 15px;
-margin-top:50px;
+margin-top:0;
 margin-bottom:0px;
 border:none;
 }
@@ -59,30 +59,44 @@ text-align:center;
 padding:0;
 }
 a{text-decoration:none;}
+#alertmessage{
+	padding:5px;
+	color:#db2607;
+}
 </style>
 
 </head>
-
 <body>
-<header><h1 style="font-size:40px">게시판 회원가입</h1></header>
-<div class="super">
-<div class="form_wrapper">
-<form action="/action_signup.php" method="post" class="form">
+	<header><h1 style="font-size:40px">게시판 회원가입</h1></header>
+	<div class="super">
+	<div class="form_wrapper">
+	
+	<form id="myform" action="submit.php" method="post">
+		<div>
+			<input type="text" id="nname" name="nname" placeholder="닉네임" required autofocus >
+			</div>
 	<div>
-		<input type="text" id="nname" name="nname" placeholder="닉네임" required autofocus >
+	<input type="text" id="useridv" name="userid" placeholder="아이디" required>
+	</div>
+	
+	<div>
+	<input type="password" id="password" name="password" placeholder="비밀번호" required>
+	</div>
+	<div>
+		<input type="password" id="password_check" name="password_check" placeholder="비밀번호 확인" required>
 		</div>
-<div>
-<input type="text" id="useridv" name="userid" placeholder="아이디" >
-</div>
-<div>
-<input type="text" id="password" name="password" placeholder="비밀번호">
-</div>
-<div>
-<input type="submit" value="가입" >
-</div>
-</form>
+	<div>
+		<p id="alertmessage"></p>
+	<input type="submit" value="가입" >
+	</div>
+	
+	</form>
+	
+	<input type="hidden" id="check" value="">
+	</div>
+	</div>
+	<script src="signup_nname.js"></script>
+	<script src="signup_check.js"></script>
+	</body>
 
-</div>
-</div>
-</body>
 </html>
