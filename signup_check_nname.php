@@ -1,9 +1,5 @@
 <?php
-header('Content-type: text/plain; charset=utf-8');
-$id_value=$_GET["id_value"];
-
 //create connection
-
 $conn=mysqli_connect("localhost","root","","board");
 
 if(!$conn)
@@ -18,17 +14,21 @@ if($conn->query($insert_query)){
     echo "error".$insert_query."<br>".$conn.error;
 }
 */
+$id_value=$_POST["id_value"];
+$id_name=$_POST["id_name"];
+if($id_name=="nname")
 $sql="select * from user where nname='$id_value'";
+else $sql="select * from user where uid='$id_value'";
 $result=mysqli_query($conn,$sql);
 if(mysqli_num_rows($result)>0){
-    echo "1";
+    echo "true";
     /*
     while($row=mysqli_fetch_assoc($result)){
         echo "닉네임".$row["nname"]." 아이디 ".$row["uid"]." 비밀번호 ".$row["upw"]; 
     }
     */
 }else{
-    echo "0";
+    echo "false";
 }
-
+mysqli_close($conn);
 ?>
