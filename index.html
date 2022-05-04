@@ -5,6 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="index_style.css">
+
 </head>
 
 <body>
@@ -20,7 +21,7 @@
 	<h2>목록</h2>
 	<ul> 
 		<li><a href="#">자유게시판</a></li>
-		<li><a href="#">동영상</a></li>
+		<li><a href="getnname.php">동영상</a></li>
 		<li><a href="https://www.w3.org/TR/2011/WD-html5-20110405/ ">W3</a></li>
 		<li><a href="https://www.w3schools.com/">w3school</a></li>
 		<li><a href="#">can i use</a></li>
@@ -57,6 +58,17 @@
 </div>
 
 </div>
+<script>
+	const islogin = new XMLHttpRequest();
 
+	islogin.onload = function() {
+		//alert(this.responseText);
+		document.querySelector(".nav_login").innerHTML =
+		`<h2>안녕하세요 <br>${this.responseText}님</h2><p><a href="#">로그아웃</a></p>`;
+		
+	}
+	islogin.open("GET", "getnname.php");
+	islogin.send();
+</script>
 </body>
 </html>
