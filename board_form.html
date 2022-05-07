@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+<title>게시글 작성</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style> 
+* {
+box-sizing: border-box;
+}
+header{
+text-align:center;
+margin-top:40px;
+margin-bottom:40px;
+}
+.super{
+border:2px solid red; 
+text-align:center;
+
+}
+.form_wrapper{
+display:inline-block;
+border:2px solid orange ;
+border-radius:5px;
+padding:20px;
+text-align:center;
+width:700px;
+}
+.board_form{
+width:100%;
+display:inline-block; 
+
+}
+
+.board_form input{
+width:100%;
+padding:10px 15px;
+margin: 5px 0;
+border-radius:5px;
+border:1px solid #dadada;
+}
+.board_form input[type=text]:focus{
+outline:none; 
+border: 1px solid #03c75a;
+}
+.board_form input[type=submit]{
+background-color: #4CAF50;
+color:white;
+border-radius:5px;
+width:100%;
+padding:10px 15px;
+margin-top:50px;
+margin-bottom:0px;
+border:none;
+}
+ul{
+list-style:none;
+text-align:center;
+padding:0;
+}
+a{text-decoration:none;}
+textarea{
+    width:100%;
+    height:400px;
+    resize:none;
+}
+</style>
+
+</head>
+
+<body>
+    <header><h1 style="font-size:40px">글쓰기</h1></header>
+    <div class="super">
+        <div class="form_wrapper">
+            <form action="board_store.php" target="_blank" method="post" class="board_form"
+                enctype="multipart/form-data">
+                <div>
+                    <input type="text" id="title" name="title" placeholder="제목" required autofocus >
+                </div>
+                <div>
+                    <textarea name="article"></textarea>
+                    <!--<input type="file" name="upload"> 파일업로드-->
+                </div>
+                <div>
+                    <input type="submit" value="저장하기" >
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

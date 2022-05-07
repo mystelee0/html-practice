@@ -52,7 +52,7 @@
 
 </ol>	<!--<img src="image1.png" width="80%">   이미지 추가-->
 <footer>
-	<div>1</div>
+	<div><a href="board_form.html">글쓰기</a></div>
 	<div>2</div>
 	</footer>
 </div>
@@ -63,6 +63,7 @@
 
 	islogin.onload = function() {
 		//alert(this.responseText);
+		if(this.responseText!="")
 		document.querySelector(".nav_login").innerHTML =
 		`<h2>안녕하세요 <br>${this.responseText}님</h2><p><a href="#">로그아웃</a></p>`;
 		
