@@ -65,7 +65,7 @@
 		//alert(this.responseText);
 		if(this.responseText!="")
 		document.querySelector(".nav_login").innerHTML =
-		`<h2>안녕하세요 <br>${this.responseText}님</h2><p><a href="#">로그아웃</a></p>`;
+		`<h2>안녕하세요 <br>${this.responseText}님</h2><p><a href="logout.php">로그아웃</a></p>`;
 		
 	}
 	islogin.open("GET", "getnname.php");
