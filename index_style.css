@@ -15,12 +15,21 @@ margin-bottom:5px;
 .nav{
     background-color: #f4f4f4;
 }
-.nav h2,.notice_board h2{
+.nav h2,.notice_board table{
     margin:0;
     padding:5px;
     text-align:center;
     color:#db2607;
     border-top:3px solid #db2607;
+}
+.t_title{
+    width:400px;
+}
+.t_nname{
+    width:200px;
+}
+.t_date{
+    width:200px;
 }
 .nav_login p{
    font-size:13px;
@@ -70,6 +79,7 @@ margin: 5px;
 text-align:left;
 }
 footer{
+    float:right;
     width:200px;
 }
 footer div{

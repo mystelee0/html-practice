@@ -29,28 +29,14 @@
 	</div>
 
 <div class="notice_board">
-<h2>제목</h2>
-<ol>
-<li>
+<table>
+	<tr>
+		<th class="t_title">제목</th>
+		<th class="t_nname">작성자</th>
+		<th class="t_date">날짜</th>
+	</tr>
 
-	<div class="line"> <!-- 1번 -->
-	<a href="#">1</a>
-	<span>작성자</span>
-	<span>작성일</span>
-	</div>
-</li>
-<li>
-	<div class="line"> <!--2번-->
-	<a href="#">2</a>
-	</div>
-</li>
-<li>
-	<div class="line"> <!--3번-->
-	<a href="#">3</a>
-	</div>
-</li>
-
-</ol>	<!--<img src="image1.png" width="80%">   이미지 추가-->
+</table>
 <footer>
 	<div><a href="board_form.html">글쓰기</a></div>
 	<div>2</div>
@@ -60,16 +46,23 @@
 </div>
 <script>
 	const islogin = new XMLHttpRequest();
-
+	const showboard=new XMLHttpRequest();
 	islogin.onload = function() {
-		//alert(this.responseText);
 		if(this.responseText!="")
 		document.querySelector(".nav_login").innerHTML =
 		`<h2>안녕하세요 <br>${this.responseText}님</h2><p><a href="logout.php">로그아웃</a></p>`;
 		
 	}
+	showboard.onload=function(){
+		const board=document.querySelector(".notice_board table");
+		
+		board.innerHTML+=JSON.parse(this.responseText);
+	}
 	islogin.open("GET", "getnname.php");
+	showboard.open("GET","index_show_list.php");
 	islogin.send();
+	showboard.send();
+
 </script>
 </body>
 </html>
