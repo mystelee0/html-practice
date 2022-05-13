@@ -13,10 +13,11 @@ if($record_number){
 //$i=$record_number/5;
 //$j=$record_number%5;
         $row=mysqli_fetch_array($result);
+
         $response="";
         $response="
         <tr>
-        <td>".$row["title"]."</td>
+        <td><a href='show_post.php?title=".$row["title"]."'>".$row["title"]."</a></td>
         <td>".$row["nname"]."</td>
         <td>".$row["regist_day"]."</td>
         </tr>
