@@ -10,18 +10,24 @@ $result=mysqli_query($con,$sql);
 
 $record_number=mysqli_num_rows($result);
 if($record_number){
-//$i=$record_number/5;
-//$j=$record_number%5;
+/*
+$page_count=$record_number/5;
+if($record_number%5!=0){
+    $page_count=$page_count+1;
+}
+*/
+$response="";
+        for($i=0;$i<$record_number;$i++){
         $row=mysqli_fetch_array($result);
 
-        $response="";
-        $response="
+        $response=$response."
         <tr>
         <td><a href='show_post.php?title=".$row["title"]."'>".$row["title"]."</a></td>
         <td>".$row["nname"]."</td>
         <td>".$row["regist_day"]."</td>
         </tr>
         ";
+        }
         
     echo json_encode($response);
 }
