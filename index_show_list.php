@@ -1,9 +1,10 @@
 <?php
 session_start();
 if(isset($_SESSION["page"])){
-    $_SESSION["page"]=(int)$_GET["pn"];
+    $_SESSION["page"]=$_GET["pn"];
 }
 else $_SESSION["page"]=1;
+
 $page=$_SESSION["page"];
 
 $page_response="";
@@ -36,9 +37,9 @@ for($i=1;$i<=$page_count;$i++){
 
 //페이지
 
-$a=$page*5-5;
-$b=$a+5;
-$sql="select * from boards order by num desc limit $a,$b";
+$a=(int)$page*5-5;
+
+$sql="select * from boards order by num desc limit {$a},5";
 $result=mysqli_query($con,$sql);
 
 $record_number=mysqli_num_rows($result);
