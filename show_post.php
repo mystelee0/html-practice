@@ -9,8 +9,6 @@ box-sizing: border-box;
 }
 #div1{
     position:relative;
-    /*border-top:1px solid #ccc;
-    border-left:1px solid #ccc;*/
     border:2px solid #ccc;
     box-shadow:5px 5px 5px gray;
     width:800px; 
@@ -42,21 +40,28 @@ if(mysqli_num_rows($result)){
     $row=mysqli_fetch_array($result);
     //echo "작성자 : ".$row["nname"]." 작성날짜 : ".$row["regist_day"]." ".$row["article"];
     echo "
+<div style='width:800px; margin:0 auto;'>
     <div id='div1'>
-    <div id='info';>
-<span>닉네임:".$row["nname"] ."</span><span id='date'>날짜:".$row["regist_day"]."</span>
-</div>
 
-<div id='title';>
-<h2>제목 :".$row["title"]."</h2>
-</div>
+        <div id='info';>
+           <span>닉네임:".$row["nname"] ."</span><span id='date'>날짜:".$row["regist_day"]."</span>
+        </div>
 
-<p id='article';>
-".$row["article"]."
-</p>
+        <div id='title';>
+           <h2>제목 :".$row["title"]."</h2>
+        </div>
+
+        <p id='article';>".$row["article"]."</p>
+    </div>
+    <div style='float:right'>
+        <a style='text-decoration:none; color:black;' href='post_delete.php?num=".$row["num"]."
+        &nname=".$row["nname"]."'>삭제하기</a>
+    </div>
 </div>
     ";
 }
+else echo "작성자 불일치";
+mysqli_close($link);
 ?>
 <body>
    
