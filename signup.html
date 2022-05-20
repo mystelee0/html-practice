@@ -31,7 +31,6 @@ width:100%;
 display:inline-block; 
 
 }
-
 #myform input[type]{
 width:100%;
 padding:10px 15px;
@@ -43,6 +42,7 @@ border:1px solid #dadada;
 outline:none; 
 border: 1px solid #03c75a;
 }
+
 #myform input[type=submit]{
 background-color: #4CAF50;
 color:white;
@@ -71,7 +71,7 @@ a{text-decoration:none;}
 	<div class="super">
 	<div class="form_wrapper">
 	
-	<form id="myform" action="submit.php" method="post">
+	<form id="myform" target="_self" action="submit.php" method="post">
 		<div>
 			<input type="text" id="nname" name="nname" placeholder="닉네임" required autofocus >
 			</div>
@@ -84,7 +84,17 @@ a{text-decoration:none;}
 	</div>
 	<div>
 		<input type="password" id="password_check" name="password_check" placeholder="비밀번호 확인" required>
-		</div>
+	</div>
+
+	<div>
+		<input type="text" id="email" name="email" placeholder="이메일" style="width:72%;">@
+        <select id="site"name="site" style="width:20%">
+            <option value="" selected>선택</option>
+            <option value="naver.com">네이버</option>
+            <option value="daum.com">다음</option>
+            <option value="gmail.com">구글</option>
+        </select>
+	</div>
 	<div>
 		<p id="alertmessage"></p>
 	<input type="submit" value="가입" >
@@ -96,7 +106,7 @@ a{text-decoration:none;}
 	<input type="hidden" id="checkid" value="">
 	</div>
 	</div>
-	<script src="signup_nname.js"></script>
+
 	<script src="signup_check.js"></script>
 	</body>
 

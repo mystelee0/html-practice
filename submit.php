@@ -9,8 +9,9 @@ if(!$conn)
 $nname=$_POST["nname"];
 $uid=$_POST["userid"];
 $upw=$_POST["password"];
+$email=$_POST["email"];
 
-$sql="insert into user (nname,uid,upw) values ('$nname','$uid','$upw')";
+$sql="insert into user (nname,uid,upw,email) values ('$nname','$uid','$upw','$email')";
 if(mysqli_query($conn,$sql)){
     echo("<script>location.replace('index.html');</script>"); 
 }
